@@ -7,229 +7,342 @@ function App() {
 	const [count, setCount] = useState(0);
 	let arr =[
     {
-      "user": "alice_w",
-      "uid": 1002,
-      "item": "Smartphone",
-      "cost": 20000,
-      "order_date": "05/08/24",
-      "status": "return",
-      "reason": "Screen defect",
-      "recommendation": "rejected",
-      "item_rtrp": [8, 5],
-      "user_data": {
-        "aov": { "td": 15000, "lt": 12000 },
-        "rtrpc": { "td": [35, 25], "lt": [20, 22] },
-        "rtrpv": { "td": [32, 28], "lt": [30, 22] }
-      }
+        "user": "alice_w",
+        "uid": 1002,
+        "item": "Smartphone",
+        "cost": 20000,
+        "order_date": "05/08/24",
+        "status": "return",
+        "reason": "Screen defect",
+        "item_return_percentage": "8%",
+        "item_replace_percentage": "5%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 15000,
+            "order_return_rate": "35%",
+            "order_replacement_rate": "25%",
+            "unreturned_orders": 65  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 12000,
+            "order_return_rate": "32%",
+            "order_replacement_rate": "28%",
+            "unreturned_orders": 68  
+        },
+        "membership": false  
     },
     {
-      "user": "bob_c",
-      "uid": 1003,
-      "item": "Laptop",
-      "cost": 45000,
-      "order_date": "21/07/24",
-      "status": "replace",
-      "reason": "Keyboard issue",
-      "recommendation": "rejected",
-      "item_rtrp": [5, 15],
-      "user_data": {
-        "aov": { "td": 32000, "lt": 28000 },
-        "rtrpc": { "td": [28, 45], "lt": [35, 40] },
-        "rtrpv": { "td": [25, 45], "lt": [38, 42] }
-      }
+        "user": "bob_c",
+        "uid": 1003,
+        "item": "Laptop",
+        "cost": 45000,
+        "order_date": "21/07/24",
+        "status": "replace",
+        "reason": "Keyboard issue",
+        "item_return_percentage": "5%",
+        "item_replace_percentage": "15%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 32000,
+            "order_return_rate": "28%",
+            "order_replacement_rate": "45%",
+            "unreturned_orders": 72  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 28000,
+            "order_return_rate": "25%",
+            "order_replacement_rate": "40%",
+            "unreturned_orders": 75  
+        },
+        "membership": true  
     },
     {
-      "user": "charles_d",
-      "uid": 1004,
-      "item": "Headphones",
-      "cost": 2500,
-      "order_date": "19/08/24",
-      "status": "return",
-      "reason": "Poor sound quality",
-      "recommendation": "rejected",
-      "item_rtrp": [9, 3],
-      "user_data": {
-        "aov": { "td": 3000, "lt": 2900 },
-        "rtrpc": { "td": [40, 22], "lt": [35, 28] },
-        "rtrpv": { "td": [45, 15], "lt": [40, 20] }
-      }
+        "user": "charles_d",
+        "uid": 1004,
+        "item": "Headphones",
+        "cost": 2500,
+        "order_date": "19/08/24",
+        "status": "return",
+        "reason": "Poor sound quality",
+        "item_return_percentage": "9%",
+        "item_replace_percentage": "3%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 3000,
+            "order_return_rate": "40%",
+            "order_replacement_rate": "22%",
+            "unreturned_orders": 60  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 2900,
+            "order_return_rate": "45%",
+            "order_replacement_rate": "15%",
+            "unreturned_orders": 55  
+        },
+        "membership": false  
     },
     {
-      "user": "dana_e",
-      "uid": 1005,
-      "item": "Tablet",
-      "cost": 18000,
-      "order_date": "25/07/24",
-      "status": "replace",
-      "reason": "Display problem",
-      "recommendation": "approved",
-      "item_rtrp": [4, 9],
-      "user_data": {
-        "aov": { "td": 17500, "lt": 16000 },
-        "rtrpc": { "td": [22, 18], "lt": [19, 20] },
-        "rtrpv": { "td": [25, 18], "lt": [22, 18] }
-      }
+        "user": "dana_e",
+        "uid": 1005,
+        "item": "Tablet",
+        "cost": 18000,
+        "order_date": "25/07/24",
+        "status": "replace",
+        "reason": "Display problem",
+        "item_return_percentage": "4%",
+        "item_replace_percentage": "9%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 17500,
+            "order_return_rate": "22%",
+            "order_replacement_rate": "18%",
+            "unreturned_orders": 78  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 16000,
+            "order_return_rate": "25%",
+            "order_replacement_rate": "18%",
+            "unreturned_orders": 72  
+        },
+        "membership": true  
     },
     {
-      "user": "eric_f",
-      "uid": 1006,
-      "item": "Smartwatch",
-      "cost": 12000,
-      "order_date": "10/08/24",
-      "status": "return",
-      "reason": "Charging issue",
-      "recommendation": "rejected",
-      "item_rtrp": [6, 4],
-      "user_data": {
-        "aov": { "td": 11000, "lt": 10500 },
-        "rtrpc": { "td": [34, 45], "lt": [33, 38] },
-        "rtrpv": { "td": [35, 42], "lt": [32, 40] }
-      }
+        "user": "eric_f",
+        "uid": 1006,
+        "item": "Smartwatch",
+        "cost": 12000,
+        "order_date": "10/08/24",
+        "status": "return",
+        "reason": "Charging issue",
+        "item_return_percentage": "6%",
+        "item_replace_percentage": "4%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 11000,
+            "order_return_rate": "34%",
+            "order_replacement_rate": "45%",
+            "unreturned_orders": 66  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 10500,
+            "order_return_rate": "35%",
+            "order_replacement_rate": "42%",
+            "unreturned_orders": 70  
+        },
+        "membership": false  
     },
     {
-      "user": "fiona_g",
-      "uid": 1007,
-      "item": "Bluetooth Speaker",
-      "cost": 3500,
-      "order_date": "08/08/24",
-      "status": "replace",
-      "reason": "Bluetooth connectivity issue",
-      "recommendation": "approved",
-      "item_rtrp": [40, 30],
-      "user_data": {
-        "aov": { "td": 3200, "lt": 3000 },
-        "rtrpc": { "td": [22, 35], "lt": [20, 38] },
-        "rtrpv": { "td": [26, 30], "lt": [29, 31] }
-      }
+        "user": "fiona_g",
+        "uid": 1007,
+        "item": "Bluetooth Speaker",
+        "cost": 3500,
+        "order_date": "08/08/24",
+        "status": "replace",
+        "reason": "Bluetooth connectivity issue",
+        "item_return_percentage": "40%",
+        "item_replace_percentage": "30%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 3200,
+            "order_return_rate": "22%",
+            "order_replacement_rate": "35%",
+            "unreturned_orders": 78  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 3000,
+            "order_return_rate": "26%",
+            "order_replacement_rate": "30%",
+            "unreturned_orders": 74  
+        },
+        "membership": true  
     },
     {
-      "user": "george_h",
-      "uid": 1008,
-      "item": "Wireless Earbuds",
-      "cost": 4000,
-      "order_date": "11/08/24",
-      "status": "return",
-      "reason": "Sound imbalance",
-      "recommendation": "rejected",
-      "item_rtrp": [7, 6],
-      "user_data": {
-        "aov": { "td": 3500, "lt": 3700 },
-        "rtrpc": { "td": [33, 25], "lt": [28, 30] },
-        "rtrpv": { "td": [31, 20], "lt": [30, 25] }
-      }
-    },{
-      "user": "hannah_i",
-      "uid": 1009,
-      "item": "Gaming Mouse",
-      "cost": 2500,
-      "order_date": "20/07/24",
-      "status": "replace",
-      "reason": "Faulty buttons",
-      "recommendation": "approved",
-      "item_rtrp": [40, 30],
-      "user_data": {
-        "aov": { "td": 2300, "lt": 2200 },
-        "rtrpc": { "td": [25, 30], "lt": [28, 30] },
-        "rtrpv": { "td": [20, 35], "lt": [22, 32] }
-      }
+        "user": "george_h",
+        "uid": 1008,
+        "item": "Wireless Earbuds",
+        "cost": 4000,
+        "order_date": "11/08/24",
+        "status": "return",
+        "reason": "Sound imbalance",
+        "item_return_percentage": "7%",
+        "item_replace_percentage": "6%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 3500,
+            "order_return_rate": "33%",
+            "order_replacement_rate": "25%",
+            "unreturned_orders": 67  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 3700,
+            "order_return_rate": "31%",
+            "order_replacement_rate": "20%",
+            "unreturned_orders": 68  
+        },
+        "membership": false  
     },
     {
-      "user": "isla_j",
-      "uid": 1010,
-      "item": "Smart TV",
-      "cost": 55000,
-      "order_date": "15/08/24",
-      "status": "return",
-      "reason": "Picture quality issue",
-      "recommendation": "rejected",
-      "item_rtrp": [8, 5],
-      "user_data": {
-        "aov": { "td": 53000, "lt": 52000 },
-        "rtrpc": { "td": [32, 38], "lt": [34, 42] },
-        "rtrpv": { "td": [33, 37], "lt": [35, 40] }
-      }
+        "user": "hannah_i",
+        "uid": 1009,
+        "item": "Gaming Mouse",
+        "cost": 2500,
+        "order_date": "20/07/24",
+        "status": "replace",
+        "reason": "Faulty buttons",
+        "item_return_percentage": "40%",
+        "item_replace_percentage": "30%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 2300,
+            "order_return_rate": "25%",
+            "order_replacement_rate": "30%",
+            "unreturned_orders": 75  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 2200,
+            "order_return_rate": "20%",
+            "order_replacement_rate": "35%",
+            "unreturned_orders": 80  
+        },
+        "membership": true  
     },
     {
-      "user": "jack_k",
-      "uid": 1011,
-      "item": "Vacuum Cleaner",
-      "cost": 15000,
-      "order_date": "10/08/24",
-      "status": "replace",
-      "reason": "Low suction power",
-      "recommendation": "approved",
-      "item_rtrp": [45, 22],
-      "user_data": {
-        "aov": { "td": 14000, "lt": 13500 },
-        "rtrpc": { "td": [28, 32], "lt": [24, 30] },
-        "rtrpv": { "td": [29, 25], "lt": [32, 30] }
-      }
+        "user": "isla_j",
+        "uid": 1010,
+        "item": "Smart TV",
+        "cost": 55000,
+        "order_date": "15/08/24",
+        "status": "return",
+        "reason": "Picture quality issue",
+        "item_return_percentage": "8%",
+        "item_replace_percentage": "5%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 53000,
+            "order_return_rate": "32%",
+            "order_replacement_rate": "38%",
+            "unreturned_orders": 68  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 52000,
+            "order_return_rate": "33%",
+            "order_replacement_rate": "37%",
+            "unreturned_orders": 72  
+        },
+        "membership": false  
     },
     {
-      "user": "karen_l",
-      "uid": 1012,
-      "item": "Refrigerator",
-      "cost": 30000,
-      "order_date": "12/07/24",
-      "status": "return",
-      "reason": "Cooling issue",
-      "recommendation": "rejected",
-      "item_rtrp": [7, 4],
-      "user_data": {
-        "aov": { "td": 29000, "lt": 28000 },
-        "rtrpc": { "td": [35, 32], "lt": [30, 33] },
-        "rtrpv": { "td": [38, 35], "lt": [33, 30] }
-      }
+        "user": "jack_k",
+        "uid": 1011,
+        "item": "Vacuum Cleaner",
+        "cost": 15000,
+        "order_date": "10/08/24",
+        "status": "replace",
+        "reason": "Low suction power",
+        "item_return_percentage": "45%",
+        "item_replace_percentage": "22%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 14000,
+            "order_return_rate": "28%",
+            "order_replacement_rate": "32%",
+            "unreturned_orders": 72  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 13500,
+            "order_return_rate": "29%",
+            "order_replacement_rate": "25%",
+            "unreturned_orders": 71  
+        },
+        "membership": true  
     },
     {
-      "user": "liam_m",
-      "uid": 1013,
-      "item": "Air Conditioner",
-      "cost": 45000,
-      "order_date": "08/08/24",
-      "status": "replace",
-      "reason": "Not cooling",
-      "recommendation": "approved",
-      "item_rtrp": [35, 33],
-      "user_data": {
-        "aov": { "td": 43000, "lt": 42000 },
-        "rtrpc": { "td": [20, 35], "lt": [25, 30] },
-        "rtrpv": { "td": [28, 40], "lt": [25, 38] }
-      }
+        "user": "karen_l",
+        "uid": 1012,
+        "item": "Refrigerator",
+        "cost": 30000,
+        "order_date": "12/07/24",
+        "status": "return",
+        "reason": "Cooling issue",
+        "item_return_percentage": "7%",
+        "item_replace_percentage": "4%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 29000,
+            "order_return_rate": "35%",
+            "order_replacement_rate": "32%",
+            "unreturned_orders": 65  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 28000,
+            "order_return_rate": "38%",
+            "order_replacement_rate": "35%",
+            "unreturned_orders": 64  
+        },
+        "membership": false  
     },
     {
-      "user": "mike_n",
-      "uid": 1014,
-      "item": "Coffee Machine",
-      "cost": 8000,
-      "order_date": "07/08/24",
-      "status": "return",
-      "reason": "Water leakage",
-      "recommendation": "rejected",
-      "item_rtrp": [6, 5],
-      "user_data": {
-        "aov": { "td": 7800, "lt": 7600 },
-        "rtrpc": { "td": [33, 22], "lt": [32, 26] },
-        "rtrpv": { "td": [35, 25], "lt": [34, 27] }
-      }
+        "user": "liam_m",
+        "uid": 1013,
+        "item": "Air Conditioner",
+        "cost": 45000,
+        "order_date": "08/08/24",
+        "status": "replace",
+        "reason": "Not cooling",
+        "item_return_percentage": "35%",
+        "item_replace_percentage": "33%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 43000,
+            "order_return_rate": "20%",
+            "order_replacement_rate": "35%",
+            "unreturned_orders": 80  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 42000,
+            "order_return_rate": "28%",
+            "order_replacement_rate": "40%",
+            "unreturned_orders": 75  
+        },
+        "membership": true  
     },
     {
-      "user": "nina_o",
-      "uid": 1015,
-      "item": "Refrigerator",
-      "cost": 35000,
-      "order_date": "18/08/24",
-      "status": "replace",
-      "reason": "Cooling problem",
-      "recommendation": "approved",
-      "item_rtrp": [40, 30],
-      "user_data": {
-        "aov": { "td": 34000, "lt": 33000 },
-        "rtrpc": { "td": [22, 35], "lt": [20, 38] },
-        "rtrpv": { "td": [26, 30], "lt": [29, 31] }
-      }
-    }
-    ]
+        "user": "mike_n",
+        "uid": 1014,
+        "item": "Coffee Machine",
+        "cost": 8000,
+        "order_date": "07/08/24",
+        "status": "return",
+        "reason": "Water leakage",
+        "item_return_percentage": "6%",
+        "item_replace_percentage": "5%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 7800,
+            "order_return_rate": "33%",
+            "order_replacement_rate": "22%",
+            "unreturned_orders": 67  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 7600,
+            "order_return_rate": "35%",
+            "order_replacement_rate": "25%",
+            "unreturned_orders": 65  
+        },
+        "membership": false  
+    },
+    {
+        "user": "nina_o",
+        "uid": 1015,
+        "item": "Refrigerator",
+        "cost": 35000,
+        "order_date": "18/08/24",
+        "status": "replace",
+        "reason": "Cooling problem",
+        "item_return_percentage": "40%",
+        "item_replace_percentage": "30%",
+        "past_thirty_days_user_stats": {
+            "average_order_value": 34000,
+            "order_return_rate": "22%",
+            "order_replacement_rate": "35%",
+            "unreturned_orders": 78  
+        },
+        "lifetime_user_stats": {
+            "average_order_value": 33000,
+            "order_return_rate": "26%",
+            "order_replacement_rate": "30%",
+            "unreturned_orders": 75  
+        },
+        "membership": true  
+    }
+]
     
   
   
@@ -238,18 +351,34 @@ function App() {
     
 	let cards = arr.map((x, i) => {
     //x.item_rtrp=arr[0].item_rtrp
-    x.user=x.user_data
   return <Card key={i} data={x} />});
-  
+  arr=arr.map
 	return (
 		<>
 			<div
 				onScroll={(e) => {
 					
 				}}
-				className="fixed bg-light-1 h-full w-full overflow-y-scroll  justify-center flex flex-wrap gap-5">
-				<div className="sticky top-0 z-10 w-full backdrop-blur-md duration-300 h-16 bg-dark-1 bg-opacity- 80 "></div>
-				{cards}
+				className="fixed bg-light-1 h-full w-full  pb-16    justify-center flex flex-wrap ">
+				<div className="sticky top-0 z-10 w-full backdrop-blur-md justify-between px-3 duration-300 lexend  flex items-center  text-light-2 h-16 bg-dark-1 bg-opacity- 80 ">
+          <div className="text-3xl fade">sundarban </div>
+          <div className="h-full py-2 flex items-center gap-2">
+            <div className="h-full flex flex-col overflow-hidden items-end justify-center">
+            <div className="">Good Morning, Peyush </div>
+            <div className="text-dark-1 bg-dark-1 reveal pl-8 duration-1000 slide -mt-6" style={{ background:"linear-gradient(90deg, #2e344000 0%, #2e3440 10%)"
+
+            }}>Good Morning, Peyush </div>
+            <div className=" text-sm text-gray-400 fade2">Todays Goal: 0/100</div>
+            </div>
+                                             
+            <div className="h-full border-dark-3 border aspect-square  fade rounded-full"
+            style={{backgroundImage: `url(https://assets.entrepreneur.com/content/3x2/2000/1674100659-pbansal.jpg?format=pjeg&auto=webp&crop=1:1)`, backgroundOrigin:"cetner",backgroundSize:"cover"}}
+            ></div>
+          </div>
+        </div>
+				<div className=" overflow-y-scroll w-full items-center justify-center p-5 pl-5 pr-0 h-full flex flex-wrap gap-5">
+        {cards}
+        </div>
 			</div>
 		</>
 	);

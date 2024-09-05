@@ -8,7 +8,7 @@ function App() {
 	const [count, setCount] = useState(0);
   let  [arr,setArr]=useState([])
   if(arr.length<1){
-    fetch("https://hackx-prd-back.jpbhatt.tech/getData").then((res)=>res.json()).then((data)=>{setArr(data)})
+    fetch("https://back.jpbhatt.tech/getData").then((res)=>res.json()).then((data)=>{setArr(data)})
   }
 // 	let arr2 =[
 //     {
